@@ -1,0 +1,82 @@
+#page {
+    margin: 0;
+    padding: 0;
+    background-color: #272522;
+}
+
+#content {
+    width: 75%;
+    margin-left: 5%;
+    margin-right: 20%;
+    background-color: #272522;
+    padding: 2em;
+}
+
+#content h1 {
+    color: whitesmoke;
+}
+
+#content h2 {
+    color: whitesmoke;
+}
+
+#content p {
+    color: whitesmoke;
+}
+
+#mastheadregion {
+    width: 100%;
+    background-color: #373782;
+    height: 256px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+#masthead {
+    background-image: url("images/masthead.png");
+    background-repeat: no-repeat;
+    height: 256px;
+    margin-left: 128px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+#sidebar {
+    width: 100%;
+    background-color: #373782;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+#sidebar ul li {
+    list-style-type: none;
+    display: inline;
+}
+
+#sidebar a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: #272762;
+    border-left: 1px solid black;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#sidebar a:hover {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: black;
+    border: 1px solid whitesmoke;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+body {
+    background-color: #272522;
+    color: whitesmoke;
+    font-family: "Ubuntu", sans-serif;
+}
