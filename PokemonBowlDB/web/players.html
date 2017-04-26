@@ -29,18 +29,25 @@ and open the template in the editor.
         </div> <!--end sidebar-->
 
         <div id="content">
-            <p>This tool will help you locate Pokemon that have been or are currently being bred.</p>
-            <p>Fill in the boxes with desired attributes in the Pokemon to search for.  Leave any fields blank
-            for which you don't care what the value is. (i.e. leave 'Gender' blank if you don't care what 
-            gender a Pokemon has.)  Click "Search" in order to generate results.</p>
-            Pokemon Name: &nbsp; <input type="text" id="PName" size="18" /> &nbsp; Gender: &nbsp; <input type="text" id="Gender" size="1" />
-            &nbsp; Shiny? (y/n): &nbsp; <input type="text" id="Shiny" size="1" /> &nbsp; Nature: &nbsp; <input type="text" id="Nature" size="10" />
-            &nbsp; Ability: &nbsp; <input type="text" id="Ability" size="24" /> <br /><br />
-            HP: &nbsp; <input type="text" id="HP" size="2" /> &nbsp; Attack: &nbsp; <input type="text" id="Attack" size="2" /> &nbsp;
-            Defense: &nbsp; <input type="text" id="Defense" size="2" /> &nbsp; Sp. Attack: &nbsp; <input type="text" id="SpAttack" size="2" /> &nbsp;
-            Sp. Defense: &nbsp; <input type="text" id="SpDefense" size="2" /> &nbsp; Speed: &nbsp; <input type="text" id="Speed" size="2" /> &nbsp; <br /><br />
-            Egg Moves: &nbsp; <input type="text" id="Move1" size="20" /> &nbsp; <input type="text" id="Move2" size="20" /> &nbsp;
-            <input type="text" id="Move3" size="20" /> &nbsp; <input type="text" id="Move4" size="20" /> <br /><br />
+            <p>This tool allows you to find information on players in a variety of categories.</p>
+            <p>Type in the player's Discord username, their friend code, or their In-Game-Name (IGN) to search for
+            a particular player.  Then select from the dropdown menu what specific category of information you
+            wish to know about that player.  Categories: General gives information on the player's Discord name
+            and what games they play; Events gives information on their tournament performance; Teams retrieves
+            data on what Pokemon teams they have registered; Breeding generates a list of all the Pokemon
+            they have bred or are breeding, as well as how many of each Pokemon they have.</p>
+            
+            Discord u/n: &nbsp; <input type="text" id="discord" size="24" /> &nbsp;
+            Friend Code: &nbsp; <input type="number" id="FC" size="12" /> &nbsp;
+            IGN: &nbsp; <input type="text" id="IGN" size="14" /> &nbsp;
+            Record Type: 
+            <select>
+                <option value="general">General</option>
+                <option value="events">Events</option>
+                <option value="teams">Teams</option>
+                <option value="breeding">Breeding</option>
+            </select>
+            &nbsp;
             <button onclick="">Search</button>
             
             <!-- TODO: Add filters to remove columns from results -->
