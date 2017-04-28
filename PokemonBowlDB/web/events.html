@@ -29,25 +29,29 @@ and open the template in the editor.
         </div> <!--end sidebar-->
 
         <div id="content">
-            <p>This tool allows you to find information on players in a variety of categories.</p>
-            <p>Type in the player's Discord username, their friend code, or their In-Game-Name (IGN) to search for
-            a particular player.  Then select from the dropdown menu what specific category of information you
-            wish to know about that player.  Categories: General gives information on the player's Discord name
-            and what games they play; Events gives information on their tournament performance; Teams retrieves
-            data on what Pokemon teams they have registered; Breeding generates a list of all the Pokemon
-            they have bred or are breeding, as well as how many of each Pokemon they have.</p>
+            <p>This tool allows you to search for events that have been or will be held
+            by the Poke(mon) Bowl Discord, as well as information such as which teams
+            were used and what prizes were awarded.</p>
+            <p>Fill in any fields you would like to search for matches on, and leave
+            any fields blank for which the value does not matter.  You can also optionally
+            specify a date range in which to search for events.  Leave all fields blank to
+            search all events.</p>
+            <p>In the dropdown menu, select what kind of result to display for the matching
+            events.  "Info" displays the general info about the tourney on a top-level
+            perspective, listing the advertised parameters of the tournament, and the 
+            first place winner where applicable.  "Teams" lists the Pokemon used in the 
+            tourney, grouped by placement and player.</p>
             
-            Discord u/n: &nbsp; <input type="text" id="discord" size="24" /> &nbsp;
-            Friend Code: &nbsp; <input type="number" id="FC" size="12" /> &nbsp;
-            IGN: &nbsp; <input type="text" id="IGN" size="14" /> &nbsp;
-            Record Type: 
+            Event Name: &nbsp; <input type="text" id="EName" size="48" />  &nbsp;
+            Format: &nbsp; <input type="text" id="Format" size="16" /> &nbsp;
+            Location: &nbsp; <input type="text" id="Location" size="20" /> <br /><br />
+            Date After: &nbsp; <input type="date" id="After" size="8" /> &nbsp;
+            Before: &nbsp; <input type="date" id="Before" size="8" /> <br /><br />
+            
             <select>
-                <option value="general">General</option>
-                <option value="events">Events</option>
+                <option value="info">Info</option>
                 <option value="teams">Teams</option>
-                <option value="breeding">Breeding</option>
             </select>
-            &nbsp;
             <button onclick="">Search</button>
             
             <!-- TODO: Add filters to remove columns from results -->
