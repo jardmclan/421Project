@@ -9,7 +9,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
-<body>
+<h:body>
     <div id="mastheadregion"> <div id="masthead"></div></div>
 
     <div id="page">
@@ -20,7 +20,7 @@
                 <li><a href="breeding.xhtml">Breeding Projects</a></li>
                 <li><a href="players.xhtml">Players</a></li>
                 <li><a href="events.xhtml">Events</a></li>
-                <li><a href="resources.">Resources</a></li>
+                <li><a href="resources.xhtml">Resources</a></li>
                 <li><a href="teams.xhtml">Teams</a></li>
             </ul>
         </div> <!--end sidebar-->
@@ -33,17 +33,27 @@
             search for, and optionally add any text you wish to search for in
             the description.</p>
             
+            <h:form>
             Pokemon Version: &nbsp; 
-            <select>
-                <option value="Sun Moon">Sun & Moon</option>
-                <option value="ORAS">Omega Ruby & Alpha Sapphire</option>
-                <option value="XY">X & Y</option>
-                <option value="BW">Black & White</option>
-            </select> &nbsp;
+            <h:selectOneListbox id="version" value="">
+                <f:selectItem id="sunmoon" itemLabel="Sun Moon" value="Sun Moon" />
+                <f:selectItem id="oras" itemLabel="ORAS" value="ORAS" />
+                <f:selectItem id="xy" itemLabel="XY" value="XY" />
+                <f:selectItem id="bw" itemLabel="BW" value="BW" />
+            </h:selectOneListbox> &nbsp;
             
+            Category: &nbsp;
+            <h:selectOneListbox id="category" value="">
+                <f:selectItem id="breeding" itemLabel="Breeding" value="Breeding" />
+                <f:selectItem id="map" itemLabel="Map" value="Map" />
+                <f:selectItem id="misc" itemLabel="Misc Tips" value="Misc Tips" />
+                <f:selectItem id="battle" itemLabel="Battle" value="Battle" />
+            </h:selectOneListbox> &nbsp;
             
+            Description Contains: &nbsp; <h:inputText id="description" size="32" value="" /> &nbsp;
             
-            <button onclick="">Search</button>
+            <commandButton id="searchResources" value="Search" action="" />
+            </h:form>
             
             <!-- TODO: Add filters to remove columns from results -->
         </div><!--end content-->
@@ -62,5 +72,5 @@
             <li><a href="teams.xhtml">Teams</a></li>
         </ul>
     </div> <!--end footer-->
-</body>
+</h:body>
 </html>

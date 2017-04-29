@@ -9,7 +9,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
-<body>
+<h:body>
     <div id="mastheadregion"> <div id="masthead"></div></div>
 
     <div id="page">
@@ -20,7 +20,7 @@
                 <li><a href="breeding.xhtml">Breeding Projects</a></li>
                 <li><a href="players.xhtml">Players</a></li>
                 <li><a href="events.xhtml">Events</a></li>
-                <li><a href="resources.">Resources</a></li>
+                <li><a href="resources.xhtml">Resources</a></li>
                 <li><a href="teams.xhtml">Teams</a></li>
             </ul>
         </div> <!--end sidebar-->
@@ -39,17 +39,19 @@
             first place winner where applicable.  "Teams" lists the Pokemon used in the 
             tourney, grouped by placement and player.</p>
             
-            Event Name: &nbsp; <input type="text" id="EName" size="48" />  &nbsp;
-            Format: &nbsp; <input type="text" id="Format" size="16" /> &nbsp;
-            Location: &nbsp; <input type="text" id="Location" size="20" /> <br /><br />
-            Date After: &nbsp; <input type="date" id="After" size="8" /> &nbsp;
-            Before: &nbsp; <input type="date" id="Before" size="8" /> <br /><br />
-            
-            <select>
-                <option value="info">Info</option>
-                <option value="teams">Teams</option>
-            </select>
-            <button onclick="">Search</button>
+            <h:form>
+                Event Name: &nbsp; <h:inputText id="EName" size="48" value="" />  &nbsp;
+                Format: &nbsp; <h:inputText id="Format" size="16" value="" /> &nbsp;
+                Location: &nbsp; <h:inputText id="Location" size="20" value="" /> <br /><br />
+                Date After: &nbsp; <h:inputText id="After" size="8" value="" /> &nbsp;
+                Before: &nbsp; <h:inputText id="Before" size="8" value="" /> <br /><br />
+
+                <h:selectOneListbox id="eventdata" value="">
+                    <f:selectItem id="info" itemLabel="Info" value="info" />
+                    <f:selectItem id="teams" itemLabel="Teams" value="teams" />
+                </h:selectOneListbox>
+                <h:commandButton id="searchEvents" value="Search" action="" />
+            </h:form>
             
             <!-- TODO: Add filters to remove columns from results -->
         </div><!--end content-->
@@ -68,5 +70,5 @@
             <li><a href="teams.xhtml">Teams</a></li>
         </ul>
     </div> <!--end footer-->
-</body>
+</h:body>
 </html>

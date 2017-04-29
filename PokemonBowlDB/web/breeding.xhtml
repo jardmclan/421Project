@@ -9,7 +9,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
-<body>
+<h:body>
     <div id="mastheadregion"> <div id="masthead"></div></div>
 
     <div id="page">
@@ -20,7 +20,7 @@
                 <li><a href="breeding.xhtml">Breeding Projects</a></li>
                 <li><a href="players.xhtml">Players</a></li>
                 <li><a href="events.xhtml">Events</a></li>
-                <li><a href="resources.">Resources</a></li>
+                <li><a href="resources.xhtml">Resources</a></li>
                 <li><a href="teams.xhtml">Teams</a></li>
             </ul>
         </div> <!--end sidebar-->
@@ -30,15 +30,24 @@
             <p>Fill in the boxes with desired attributes in the Pokemon to search for.  Leave any fields blank
             for which you don't care what the value is. (i.e. leave 'Gender' blank if you don't care what 
             gender a Pokemon has.)  Click "Search" in order to generate results.</p>
-            Pokemon Name: &nbsp; <input type="text" id="PName" size="18" /> &nbsp; Gender: &nbsp; <input type="text" id="Gender" size="1" />
-            &nbsp; Shiny? (y/n): &nbsp; <input type="text" id="Shiny" size="1" /> &nbsp; Nature: &nbsp; <input type="text" id="Nature" size="10" />
-            &nbsp; Ability: &nbsp; <input type="text" id="Ability" size="24" /> <br /><br />
-            HP: &nbsp; <input type="text" id="HP" size="2" /> &nbsp; Attack: &nbsp; <input type="text" id="Attack" size="2" /> &nbsp;
-            Defense: &nbsp; <input type="text" id="Defense" size="2" /> &nbsp; Sp. Attack: &nbsp; <input type="text" id="SpAttack" size="2" /> &nbsp;
-            Sp. Defense: &nbsp; <input type="text" id="SpDefense" size="2" /> &nbsp; Speed: &nbsp; <input type="text" id="Speed" size="2" /> &nbsp; <br /><br />
-            Egg Moves: &nbsp; <input type="text" id="Move1" size="20" /> &nbsp; <input type="text" id="Move2" size="20" /> &nbsp;
-            <input type="text" id="Move3" size="20" /> &nbsp; <input type="text" id="Move4" size="20" /> <br /><br />
-            <button onclick="">Search</button>
+            <h:form>
+                <h:outputLabel value="Pokemon Name: " /> <h:inputText id="PName" size="18" value="" />
+                <h:outputLabel value="Gender: " /> <h:inputText id="Gender" size="1" value="" />
+                <h:outputLabel value="Shiny? (y/n): " /> <h:inputText id="Shiny" size="1" value="" /> 
+                <h:outputLabel value="Nature: " /> <h:inputText id="Nature" size="10" value="" /> 
+                <h:outputLabel value="Ability: " /> <h:inputText id="Ability" size="24" value="" /> <br /><br />
+                <h:outputLabel value="HP: " /> <h:inputText id="HP" size="2" value="" /> 
+                <h:outputLabel value="Attack: " /> <h:inputText id="Attack" size="2" value="" />
+                <h:outputLabel value="Defense: " /> <h:inputText id="Defense" size="2" value="" />
+                <h:outputLabel value="Sp. Attack: " /> <h:inputText id="SpAttack" size="2" value="" />
+                <h:outputLabel value="Sp. Defense: " /> <h:inputText id="SpDefense" size="2" value="" /> 
+                <h:outputLabel value="Speed: " /> <h:inputText id="Speed" size="2" value="" /> <br /><br />
+                <h:outputLabel value="Egg Moves: " /> <h:inputText id="Move1" size="20" value="" />
+                <h:inputText id="Move2" size="20" value="" />
+                <h:inputText id="Move3" size="20" value="" /> 
+                <h:inputText id="Move4" size="20" value="" /> <br /><br />
+                <h:commandButton id="searchBreeding" value="Search" action="" />
+            </h:form>
             
             <!-- TODO: Add filters to remove columns from results -->
         </div><!--end content-->
@@ -57,5 +66,5 @@
             <li><a href="teams.xhtml">Teams</a></li>
         </ul>
     </div> <!--end footer-->
-</body>
+</h:body>
 </html>

@@ -9,7 +9,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
-<body>
+<h:body>
     <div id="mastheadregion"> <div id="masthead"></div></div>
 
     <div id="page">
@@ -20,7 +20,7 @@
                 <li><a href="breeding.xhtml">Breeding Projects</a></li>
                 <li><a href="players.xhtml">Players</a></li>
                 <li><a href="events.xhtml">Events</a></li>
-                <li><a href="resources.">Resources</a></li>
+                <li><a href="resources.xhtml">Resources</a></li>
                 <li><a href="teams.xhtml">Teams</a></li>
             </ul>
         </div> <!--end sidebar-->
@@ -34,18 +34,20 @@
             data on what Pokemon teams they have registered; Breeding generates a list of all the Pokemon
             they have bred or are breeding, as well as how many of each Pokemon they have.</p>
             
-            Discord u/n: &nbsp; <input type="text" id="discord" size="24" /> &nbsp;
-            Friend Code: &nbsp; <input type="number" id="FC" size="12" /> &nbsp;
-            IGN: &nbsp; <input type="text" id="IGN" size="14" /> &nbsp;
-            Record Type: 
-            <select>
-                <option value="general">General</option>
-                <option value="events">Events</option>
-                <option value="teams">Teams</option>
-                <option value="breeding">Breeding</option>
-            </select>
-            &nbsp;
-            <button onclick="">Search</button>
+            <h:form>
+                Discord u/n: &nbsp; <h:inputText id="discord" size="24" value="" /> &nbsp;
+                Friend Code: &nbsp; <h:inputText id="FC" size="12" value="" /> &nbsp;
+                IGN: &nbsp; <h:inputText id="IGN" size="14" value="" /> &nbsp;
+                Record Type: 
+                <h:selectOneListbox id="records" value="">
+                    <f:selectItem id="general" itemLabel="General" itemValue="general" />
+                    <f:selectItem id="events" itemLabel="Events" itemValue="events" />
+                    <f:selectItem id="teams" itemLabel="Teams" itemValue="teams" />
+                    <f:selectItem id="breeding" itemLabel="Breeding" itemValue="breeding" />
+                </h:selectOneListbox>
+                &nbsp;
+                <h:commandButton id="searchPlayers" value="Search" action="" />
+            </h:form>
             
             <!-- TODO: Add filters to remove columns from results -->
         </div><!--end content-->
@@ -64,5 +66,5 @@
             <li><a href="teams.xhtml">Teams</a></li>
         </ul>
     </div> <!--end footer-->
-</body>
+</h:body>
 </html>
