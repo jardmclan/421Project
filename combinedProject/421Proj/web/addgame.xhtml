@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <title>Poke(mon) Bowl Discord DB</title>
+
+    <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+
+<h:body>
+    <div id="mastheadregion"> <div id="masthead"></div></div>
+
+    <div id="page">
+        <div id="sidebar">
+            <ul>
+                <li><a href="index.xhtml">Home</a></li>
+                <li><a href="trading.xhtml">Trade Offers</a></li>
+                <li><a href="breeding.xhtml">Breeding Projects</a></li>
+                <li><a href="players.xhtml">Players</a></li>
+                <li><a href="events.xhtml">Events</a></li>
+                <li><a href="resources.xhtml">Resources</a></li>
+                <li><a href="teams.xhtml">Teams</a></li>
+            </ul>
+        </div> <!--end sidebar-->
+
+        <div id="content">
+            <h1>Add Game:</h1>
+
+            <p>Please fill out the following:</p>
+            
+            <h:form>
+                <h:outputLabel value="Version: " />
+                <h:selectOneListbox id="version" value="">
+                    <f:selectItem id="sun" itemLabel="Sun" itemValue="Sun" />
+                    <f:selectItem id="moon" itemLabel="Moon" itemValue="Moon" />
+                    <f:selectItem id="or" itemLabel="OmegaRuby" itemValue="OR" />
+                    <f:selectItem id="as" itemLabel="AlphaSapphire" itemValue="AS" />
+                    <f:selectItem id="x" itemLabel="X" itemValue="X" />
+                    <f:selectItem id="y" itemLabel="Y" itemValue="Y" />
+                    <f:selectItem id="b" itemLabel="Black" itemValue="B" />
+                    <f:selectItem id="w" itemLabel="White" itemValue="W" />
+                    <f:selectItem id="b2" itemLabel="Black 2" itemValue="B2" />
+                    <f:selectItem id="w2" itemLabel="White 2" itemValue="W2" />
+                </h:selectOneListbox>
+                <br /><br />
+                <h:outputLabel value="In-Game Name (IGN): " /> <h:inputText id="ign" size="24" value="" /> <br /><br />
+                <h:outputLabel value="Trainer ID#: " /> <h:inputText id="tid" size="6" value="" /> <br /><br />
+                <h:outputLabel value="Battle Points: " /> <h:inputText id="bp" size="3" value="" /> <br /><br />
+                <h:commandButton id="addGame" value="addGame" action="" />
+            </h:form>
+        </div><!--end content-->        
+    </div> <!--end of "page"-->
+    
+    <div id="sidebar"> <!--weirdly, css code for footer isn't working even though it's exactly same as sidebar-->
+        <ul>
+            <li><a href="index.xhtml">Home</a></li>
+            <li><a href="trading.xhtml">Trade Offers</a></li>
+            <li><a href="breeding.xhtml">Breeding Projects</a></li>
+            <li><a href="players.xhtml">Players</a></li>
+            <li><a href="events.xhtml">Events</a></li>
+            <li><a href="resources.xhtml">Resources</a></li>
+            <li><a href="teams.xhtml">Teams</a></li>
+        </ul>
+    </div> <!--end footer-->
+</h:body>
+</html>
