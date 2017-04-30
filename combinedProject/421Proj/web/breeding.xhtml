@@ -29,7 +29,8 @@
             <p>This tool will help you locate Pokemon that have been or are currently being bred.</p>
             <p>Fill in the boxes with desired attributes in the Pokemon to search for.  Leave any fields blank
             for which you don't care what the value is. (i.e. leave 'Gender' blank if you don't care what 
-            gender a Pokemon has.)  Click "Search" in order to generate results.</p>
+            gender a Pokemon has.)  Click "Search" in order to generate results. Alternately, click "Add"
+            to create a new listing for a Pokemon you are planning to breed.</p>
             <h:form>
                 <h:outputLabel value="Pokemon Name: " /> <h:inputText id="PName" size="18" value="" />
                 <h:outputLabel value="Gender: " /> <h:inputText id="Gender" size="1" value="" />
@@ -47,6 +48,7 @@
                 <h:inputText id="Move3" size="20" value="" /> 
                 <h:inputText id="Move4" size="20" value="" /> <br /><br />
                 <h:commandButton id="searchBreeding" value="Search" action="" />
+                <h:commandButton id="addBreeding" value="Add" action="" />
             </h:form>
             
             <!-- TODO: Add filters to remove columns from results -->
