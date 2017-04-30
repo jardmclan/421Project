@@ -43,6 +43,11 @@
     padding: 0;
 }
 
+#login {
+    float: right;
+    margin: 0;
+}
+
 #sidebar {
     width: 100%;
     background-color: #373782;
