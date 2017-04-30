@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package guessNumber;
+package pokebowldb;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,8 +19,8 @@ public class CreateConnection {
         private static final String URL = "jdbc:derby://localhost:1527/";
         private static final String DB_NAME = "ics321";
         private static final String DRIVER = "org.apache.derby.jdbc.ClientDriver";
-        private static final String USER_NAME = "WindHero";
-        private static final String PASSWORD = "1234";
+        private static final String USER_NAME = "DBUSER";
+        private static final String PASSWORD = "ics321";
         
         protected static void getConnection() throws SQLException {
             con = DriverManager.getConnection(URL + DB_NAME, USER_NAME, PASSWORD);

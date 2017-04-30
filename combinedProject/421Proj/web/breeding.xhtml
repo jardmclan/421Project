@@ -32,26 +32,141 @@
             gender a Pokemon has.)  Click "Search" in order to generate results. Alternately, click "Add"
             to create a new listing for a Pokemon you are planning to breed.</p>
             <h:form>
-                <h:outputLabel value="Pokemon Name: " /> <h:inputText id="PName" size="18" value="" />
-                <h:outputLabel value="Gender: " /> <h:inputText id="Gender" size="1" value="" />
-                <h:outputLabel value="Shiny? (y/n): " /> <h:inputText id="Shiny" size="1" value="" /> 
-                <h:outputLabel value="Nature: " /> <h:inputText id="Nature" size="10" value="" /> 
-                <h:outputLabel value="Ability: " /> <h:inputText id="Ability" size="24" value="" /> <br /><br />
-                <h:outputLabel value="HP: " /> <h:inputText id="HP" size="2" value="" /> 
-                <h:outputLabel value="Attack: " /> <h:inputText id="Attack" size="2" value="" />
-                <h:outputLabel value="Defense: " /> <h:inputText id="Defense" size="2" value="" />
-                <h:outputLabel value="Sp. Attack: " /> <h:inputText id="SpAttack" size="2" value="" />
-                <h:outputLabel value="Sp. Defense: " /> <h:inputText id="SpDefense" size="2" value="" /> 
-                <h:outputLabel value="Speed: " /> <h:inputText id="Speed" size="2" value="" /> <br /><br />
-                <h:outputLabel value="Egg Moves: " /> <h:inputText id="Move1" size="20" value="" />
-                <h:inputText id="Move2" size="20" value="" />
-                <h:inputText id="Move3" size="20" value="" /> 
-                <h:inputText id="Move4" size="20" value="" /> <br /><br />
-                <h:commandButton id="searchBreeding" value="Search" action="" />
-                <h:commandButton id="addBreeding" value="Add" action="" />
+                <h:outputLabel value="Pokemon Name: " /> <h:inputText id="PName" size="18" value="#{Breeding.name}" />
+                <h:outputLabel value="Gender: " /> <h:inputText id="Gender" size="1" value="#{Breeding.gender}" />
+                <h:outputLabel value="Shiny? (y/n): " /> <h:inputText id="Shiny" size="1" value="#{Breeding.shiny}" /> 
+                <h:outputLabel value="Nature: " /> <h:inputText id="Nature" size="10" value="#{Breeding.nature}" /> 
+                <h:outputLabel value="Ability: " /> <h:inputText id="Ability" size="24" value="#{Breeding.ability}" /> <br /><br />
+                <h:outputLabel value="HP: " /> <h:inputText id="HP" size="2" value="#{Breeding.hp}" /> 
+                <h:outputLabel value="Attack: " /> <h:inputText id="Attack" size="2" value="#{Breeding.attack}" />
+                <h:outputLabel value="Defense: " /> <h:inputText id="Defense" size="2" value="#{Breeding.defense}" />
+                <h:outputLabel value="Sp. Attack: " /> <h:inputText id="SpAttack" size="2" value="#{Breeding.spAttack}" />
+                <h:outputLabel value="Sp. Defense: " /> <h:inputText id="SpDefense" size="2" value="#{Breeding.spDefense}" /> 
+                <h:outputLabel value="Speed: " /> <h:inputText id="Speed" size="2" value="#{Breeding.speed}" /> <br /><br />
+                <h:outputLabel value="Egg Moves: " /> <h:inputText id="Move1" size="20" value="#{Breeding.move1}" />
+                <h:inputText id="Move2" size="20" value="#{Breeding.move2}" />
+                <h:inputText id="Move3" size="20" value="#{Breeding.move3}" /> 
+                <h:inputText id="Move4" size="20" value="#{Breeding.move4}" /> <br /><br />
+                <h:commandButton id="searchBreeding" value="Search" action="#{Breeding.getResults}" />
+                <h:commandButton id="addBreeding" value="Add" action="#{Breeding.addBreeding}" />
             </h:form>
             
             <!-- TODO: Add filters to remove columns from results -->
+            
+            <h:dataTable value="#{Breeding.getProjects()}" var="c"
+                         frame="border"
+                         style="color: #ffffff; font-family: Tahoma; font-size: 20px"
+                         cellspacing="12"
+                         border="5">
+
+                <h:column>
+                    <f:facet name="header">
+                        Name   
+                    </f:facet>
+                        #{c.name}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        Gender   
+                    </f:facet>
+                    #{c.gender}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        Shiny   
+                    </f:facet>
+                    #{c.shiny}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Nature
+                    </f:facet>
+                    #{c.nature}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Ability
+                    </f:facet>
+                    #{c.ability}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        HP
+                    </f:facet>
+                    #{c.hp}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Attack
+                    </f:facet>
+                    #{c.attack}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Defense
+                    </f:facet>
+                    #{c.defense}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Special Attack
+                    </f:facet>
+                    #{c.spAttack}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Special Defense
+                    </f:facet>
+                    #{c.spDefense}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Speed
+                    </f:facet>
+                    #{c.speed}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Move 1
+                    </f:facet>
+                    #{c.move1}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Move 2
+                    </f:facet>
+                    #{c.move2}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Move 3
+                    </f:facet>
+                    #{c.move3}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Move 4
+                    </f:facet>
+                    #{c.move4}
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        Friend Code
+                    </f:facet>
+                    #{c.friendCode}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Discord Name
+                    </f:facet>
+                    #{c.discordName}
+                </h:column>
+
+            </h:dataTable>
+            
         </div><!--end content-->
 
         
