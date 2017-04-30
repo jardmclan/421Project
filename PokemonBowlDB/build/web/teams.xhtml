@@ -9,7 +9,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
-<body>
+<h:body>
     <div id="mastheadregion"> <div id="masthead"></div></div>
 
     <div id="page">
@@ -26,9 +26,32 @@
         </div> <!--end sidebar-->
 
         <div id="content">
-            <p></p>
-        
-            <button onclick="">Search</button>
+            <p>This tool allows you to create a team to be put into the database.</p>
+            <p>Please fill in all the information for each Pokemon in your team.
+                If you leave any stat IVs blank, they will be treated as unknown.
+                When you click "Add Pokemon", it's info will be added to the list
+                displayed below the entry form.  You cannot add Pokemon after the
+                sixth.  Click "Submit" to finish creating your team.</p>
+            
+            <h:form>
+                <h:outputLabel value="Pokemon Name: " /> <h:inputText id="PName" size="18" value="" />
+                <h:outputLabel value="Gender: " /> <h:inputText id="Gender" size="1" value="" />
+                <h:outputLabel value="Shiny? (y/n): " /> <h:inputText id="Shiny" size="1" value="" /> 
+                <h:outputLabel value="Nature: " /> <h:inputText id="Nature" size="10" value="" /> 
+                <h:outputLabel value="Ability: " /> <h:inputText id="Ability" size="24" value="" /> <br /><br />
+                <h:outputLabel value="HP: " /> <h:inputText id="HP" size="2" value="" /> 
+                <h:outputLabel value="Attack: " /> <h:inputText id="Attack" size="2" value="" />
+                <h:outputLabel value="Defense: " /> <h:inputText id="Defense" size="2" value="" />
+                <h:outputLabel value="Sp. Attack: " /> <h:inputText id="SpAttack" size="2" value="" />
+                <h:outputLabel value="Sp. Defense: " /> <h:inputText id="SpDefense" size="2" value="" /> 
+                <h:outputLabel value="Speed: " /> <h:inputText id="Speed" size="2" value="" /> <br /><br />
+                <h:outputLabel value="Moves: " /> <h:inputText id="Move1" size="20" value="" />
+                <h:inputText id="Move2" size="20" value="" />
+                <h:inputText id="Move3" size="20" value="" /> 
+                <h:inputText id="Move4" size="20" value="" /> <br /><br />
+                <h:commandButton id="addPokemon" value="Add Pokemon" action="" /> <br /><br />
+                <h:commandButton id="submitTeam" value="Submit" action="" />
+            </h:form>
             
             <!-- TODO: Add filters to remove columns from results -->
         </div><!--end content-->
@@ -47,5 +70,5 @@
             <li><a href="teams.xhtml">Teams</a></li>
         </ul>
     </div> <!--end footer-->
-</body>
+</h:body>
 </html>
