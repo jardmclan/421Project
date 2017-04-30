@@ -10,10 +10,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
 <h:body>
-    <div id="mastheadregion"> <div id="masthead"></div></div>
+    <div id="mastheadregion" class="mastheadregion"> <div id="masthead" class="masthead"></div></div>
 
-    <div id="page">
-        <div id="sidebar">
+    <div id="page" class="page">
+        <div id="sidebar" class="sidebar">
             <ul>
                 <li><a href="index.xhtml">Home</a></li>
                 <li><a href="trading.xhtml">Trade Offers</a></li>
@@ -22,14 +22,14 @@
                 <li><a href="events.xhtml">Events</a></li>
                 <li><a href="resources.xhtml">Resources</a></li>
                 <li><a href="teams.xhtml">Teams</a></li>
-                <span id="login" style="float: right; margin-right: 6em;">
+                <span id="login" class="login">
                 <li><a href="login.xhtml">Login</a></li>
                 <li><a href="register.xhtml">Register</a></li>
                 </span>
             </ul>
         </div> <!--end sidebar-->
 
-        <div id="content">
+        <div id="content" class="content">
             <p>This tool allows you to find information on players in a variety of categories.</p>
             <p>Type in the player's Discord username, their friend code, or their In-Game-Name (IGN) to search for
             a particular player.  Then select from the dropdown menu what specific category of information you
@@ -39,18 +39,18 @@
             they have bred or are breeding, as well as how many of each Pokemon they have.</p>
             
             <h:form>
-                Discord u/n: &nbsp; <h:inputText id="discord" size="24" value="" /> &nbsp;
-                Friend Code: &nbsp; <h:inputText id="FC" size="12" value="" /> &nbsp;
-                IGN: &nbsp; <h:inputText id="IGN" size="14" value="" /> &nbsp;
+                Discord u/n: &nbsp; <h:inputText id="discord" styleClass="input" size="24" value="" /> &nbsp;
+                Friend Code: &nbsp; <h:inputText id="FC" styleClass="input" size="12" value="" /> &nbsp;
+                IGN: &nbsp; <h:inputText id="IGN" styleClass="input" size="14" value="" /> &nbsp;
                 Record Type: 
-                <h:selectOneListbox id="records" value="">
+                <h:selectOneListbox id="records" styleClass="input" value="">
                     <f:selectItem id="general" itemLabel="General" itemValue="general" />
                     <f:selectItem id="events" itemLabel="Events" itemValue="events" />
                     <f:selectItem id="teams" itemLabel="Teams" itemValue="teams" />
                     <f:selectItem id="breeding" itemLabel="Breeding" itemValue="breeding" />
                 </h:selectOneListbox>
                 &nbsp;
-                <h:commandButton id="searchPlayers" value="Search" action="" />
+                <h:commandButton id="searchPlayers" styleClass="button" value="Search" action="" />
             </h:form>
             
             <!-- TODO: Add filters to remove columns from results -->
@@ -59,7 +59,7 @@
         
     </div> <!--end of "page"-->
 
-    <div id="sidebar"> <!--weirdly, css code for footer isn't working even though it's exactly same as sidebar-->
+    <div id="footer" class="footer"> <!--weirdly, css code for footer isn't working even though it's exactly same as sidebar-->
         <ul>
             <li><a href="index.xhtml">Home</a></li>
             <li><a href="trading.xhtml">Trade Offers</a></li>

@@ -10,10 +10,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
 <body>
-    <div id="mastheadregion"> <div id="masthead"></div></div>
+    <div id="mastheadregion" class="mastheadregion"> <div id="masthead" class="masthead"></div></div>
 
-    <div id="page">
-        <div id="sidebar">
+    <div id="page" class="page">
+        <div id="sidebar" class="sidebar">
             <ul>
                 <li><a href="index.xhtml">Home</a></li>
                 <li><a href="trading.xhtml">Trade Offers</a></li>
@@ -22,44 +22,45 @@
                 <li><a href="events.xhtml">Events</a></li>
                 <li><a href="resources.xhtml">Resources</a></li>
                 <li><a href="teams.xhtml">Teams</a></li>
-                <span id="login" style="float: right; margin-right: 6em;">
+                <span id="login" class="login">
                 <li><a href="login.xhtml">Login</a></li>
                 <li><a href="register.xhtml">Register</a></li>
                 </span>
             </ul>
         </div> <!--end sidebar-->
 
-        <div id="content">
+        <div id="content" class="content">
             <p>This tool will help you locate Pokemon that have been or are currently being bred.</p>
             <p>Fill in the boxes with desired attributes in the Pokemon to search for.  Leave any fields blank
             for which you don't care what the value is. (i.e. leave 'Gender' blank if you don't care what 
             gender a Pokemon has.)  Click "Search" in order to generate results. Alternately, click "Add"
             to create a new listing for a Pokemon you are planning to breed.</p>
             <h:form>
-                <h:outputLabel value="Pokemon Name: " /> <h:inputText id="PName" size="18" value="#{Breeding.name}" />
-                <h:outputLabel value="Gender: " /> <h:inputText id="Gender" size="1" value="#{Breeding.gender}" />
-                <h:outputLabel value="Shiny? (y/n): " /> <h:inputText id="Shiny" size="1" value="#{Breeding.shiny}" /> 
-                <h:outputLabel value="Nature: " /> <h:inputText id="Nature" size="10" value="#{Breeding.nature}" /> 
-                <h:outputLabel value="Ability: " /> <h:inputText id="Ability" size="24" value="#{Breeding.ability}" /> <br /><br />
-                <h:outputLabel value="HP: " /> <h:inputText id="HP" size="2" value="#{Breeding.hp}" /> 
-                <h:outputLabel value="Attack: " /> <h:inputText id="Attack" size="2" value="#{Breeding.attack}" />
-                <h:outputLabel value="Defense: " /> <h:inputText id="Defense" size="2" value="#{Breeding.defense}" />
-                <h:outputLabel value="Sp. Attack: " /> <h:inputText id="SpAttack" size="2" value="#{Breeding.spAttack}" />
-                <h:outputLabel value="Sp. Defense: " /> <h:inputText id="SpDefense" size="2" value="#{Breeding.spDefense}" /> 
-                <h:outputLabel value="Speed: " /> <h:inputText id="Speed" size="2" value="#{Breeding.speed}" /> <br /><br />
-                <h:outputLabel value="Egg Moves: " /> <h:inputText id="Move1" size="20" value="#{Breeding.move1}" />
-                <h:inputText id="Move2" size="20" value="#{Breeding.move2}" />
-                <h:inputText id="Move3" size="20" value="#{Breeding.move3}" /> 
-                <h:inputText id="Move4" size="20" value="#{Breeding.move4}" /> <br /><br />
-                <h:commandButton id="searchBreeding" value="Search" action="#{Breeding.getResults}" />
-                <h:commandButton id="addBreeding" value="Add" action="#{Breeding.addBreeding}" />
+                <h:outputLabel value="Pokemon Name: " /> <h:inputText id="PName" styleClass="input" size="18" value="#{Breeding.name}" />
+                <h:outputLabel value="Gender: " /> <h:inputText id="Gender" styleClass="input" size="1" value="#{Breeding.gender}" />
+                <h:outputLabel value="Shiny? (y/n): " /> <h:inputText id="Shiny" styleClass="input" size="1" value="#{Breeding.shiny}" /> 
+                <h:outputLabel value="Nature: " /> <h:inputText id="Nature" styleClass="input" size="10" value="#{Breeding.nature}" /> 
+                <h:outputLabel value="Ability: " /> <h:inputText id="Ability" styleClass="input" size="24" value="#{Breeding.ability}" /> <br /><br />
+                <h:outputLabel value="HP: " /> <h:inputText id="HP" styleClass="input" size="2" value="#{Breeding.hp}" /> 
+                <h:outputLabel value="Attack: " /> <h:inputText id="Attack" styleClass="input" size="2" value="#{Breeding.attack}" />
+                <h:outputLabel value="Defense: " /> <h:inputText id="Defense" styleClass="input" size="2" value="#{Breeding.defense}" />
+                <h:outputLabel value="Sp. Attack: " /> <h:inputText id="SpAttack" styleClass="input" size="2" value="#{Breeding.spAttack}" />
+                <h:outputLabel value="Sp. Defense: " /> <h:inputText id="SpDefense" styleClass="input" size="2" value="#{Breeding.spDefense}" /> 
+                <h:outputLabel value="Speed: " /> <h:inputText id="Speed" styleClass="input" size="2" value="#{Breeding.speed}" /> <br /><br />
+                <h:outputLabel value="Egg Moves: " /> <h:inputText id="Move1" styleClass="input" size="20" value="#{Breeding.move1}" />
+                <h:inputText id="Move2" styleClass="input" size="20" value="#{Breeding.move2}" />
+                <h:inputText id="Move3" styleClass="input" size="20" value="#{Breeding.move3}" /> 
+                <h:inputText id="Move4" styleClass="input" size="20" value="#{Breeding.move4}" /> <br /><br />
+                <h:commandButton id="searchBreeding" styleClass="button" value="Search" action="#{Breeding.getResults}" />
+                <h:commandButton id="addBreeding" styleClass="button" value="Add" action="#{Breeding.addBreeding}" />
             </h:form>
             
             <!-- TODO: Add filters to remove columns from results -->
+            <br />
             
             <h:dataTable value="#{Breeding.getProjects()}" var="c"
                          frame="border"
-                         style="color: #ffffff; font-family: Tahoma; font-size: 20px"
+                         styleClass="tableheader"
                          cellspacing="12"
                          border="5">
 
@@ -176,7 +177,7 @@
         
     </div> <!--end of "page"-->
 
-    <div id="sidebar"> <!--weirdly, css code for footer isn't working even though it's exactly same as sidebar-->
+    <div id="footer" class="footer"> <!--weirdly, css code for footer isn't working even though it's exactly same as sidebar-->
         <ul>
             <li><a href="index.xhtml">Home</a></li>
             <li><a href="trading.xhtml">Trade Offers</a></li>

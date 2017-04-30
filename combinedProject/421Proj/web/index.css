@@ -1,10 +1,10 @@
-#page {
+.page {
     margin: 0;
     padding: 0;
     background-color: #272522;
 }
 
-#content {
+.content {
     width: 75%;
     margin-left: 5%;
     margin-right: 20%;
@@ -12,19 +12,19 @@
     padding: 2em;
 }
 
-#content h1 {
+.content h1 {
     color: whitesmoke;
 }
 
-#content h2 {
+.content h2 {
     color: whitesmoke;
 }
 
-#content p {
+.content p {
     color: whitesmoke;
 }
 
-#mastheadregion {
+.mastheadregion {
     width: 100%;
     background-color: #373782;
     height: 256px;
@@ -33,7 +33,7 @@
     padding: 0;
 }
 
-#masthead {
+.masthead {
     background-image: url("images/masthead.png");
     background-repeat: no-repeat;
     height: 256px;
@@ -43,24 +43,25 @@
     padding: 0;
 }
 
-#login {
+.login {
     float: right;
     margin: 0;
+    padding-right: 10em;
 }
 
-#sidebar {
+.sidebar {
     width: 100%;
     background-color: #373782;
     padding-top: 2px;
     padding-bottom: 2px;
 }
 
-#sidebar ul li {
+.sidebar ul li {
     list-style-type: none;
     display: inline;
 }
 
-#sidebar a {
+.sidebar a {
     text-decoration: none;
     color: whitesmoke;
     font-weight: bold;
@@ -70,7 +71,7 @@
     padding-right: 30px;
 }
 
-#sidebar a:hover {
+.sidebar a:hover {
     text-decoration: none;
     color: whitesmoke;
     font-weight: bold;
@@ -80,7 +81,7 @@
     padding-right: 30px;
 }
 
-#footer {
+.footer {
     width: 100%;
     background-color: #373782;
     padding-top: 2px;
@@ -88,16 +89,16 @@
     clear: both;
 }
 
-#footer ul {
+.footer ul {
     list-style-type: none;
 }
 
-#footer ul li {
+.footer ul li {
     list-style-type: none;
     display: inline;
 }
 
-#footer a {
+.footer a {
     text-decoration: none;
     color: whitesmoke;
     font-weight: bold;
@@ -107,7 +108,7 @@
     padding-right: 30px;
 }
 
-#footer a:hover {
+.footer a:hover {
     text-decoration: none;
     color: whitesmoke;
     font-weight: bold;
@@ -121,4 +122,42 @@ body {
     background-color: #272522;
     color: whitesmoke;
     font-family: "Ubuntu", sans-serif;
+}
+
+.input {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.button {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.table {
+    border: 2px solid black;
+}
+
+.tableheader {
+    text-decoration: underline;
+    padding: 1em;
+    font-weight: bold;
+    color: whitesmoke;
+    background-color: #444444;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.tablecolumn {
+    text-decoration: none;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight: normal;
+    color: #444444;
+    background-color: whitesmoke;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid darkgray;
 }

@@ -10,10 +10,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
 <h:body>
-    <div id="mastheadregion"> <div id="masthead"></div></div>
+    <div id="mastheadregion" class="mastheadregion"> <div id="masthead" class="masthead"></div></div>
 
-    <div id="page">
-        <div id="sidebar">
+    <div id="page" class="page">
+        <div id="sidebar" class="sidebar">
             <ul>
                 <li><a href="index.xhtml">Home</a></li>
                 <li><a href="trading.xhtml">Trade Offers</a></li>
@@ -22,14 +22,14 @@
                 <li><a href="events.xhtml">Events</a></li>
                 <li><a href="resources.xhtml">Resources</a></li>
                 <li><a href="teams.xhtml">Teams</a></li>
-                <span id="login" style="float: right; margin-right: 6em;">
+                <span id="login" class="login">
                 <li><a href="login.xhtml">Login</a></li>
                 <li><a href="register.xhtml">Register</a></li>
                 </span>
             </ul>
         </div> <!--end sidebar-->
 
-        <div id="content">
+        <div id="content" class="content">
             <p>This tool allows you to search for events that have been or will be held
             by the Poke(mon) Bowl Discord, as well as information such as which teams
             were used and what prizes were awarded.</p>
@@ -44,17 +44,17 @@
             tourney, grouped by placement and player.</p>
             
             <h:form>
-                Event Name: &nbsp; <h:inputText id="EName" size="48" value="" />  &nbsp;
-                Format: &nbsp; <h:inputText id="Format" size="16" value="" /> &nbsp;
-                Location: &nbsp; <h:inputText id="Location" size="20" value="" /> <br /><br />
-                Date After: &nbsp; <h:inputText id="After" size="8" value="" /> &nbsp;
-                Before: &nbsp; <h:inputText id="Before" size="8" value="" /> <br /><br />
+                Event Name: &nbsp; <h:inputText id="EName" styleClass="input" size="48" value="" />  &nbsp;
+                Format: &nbsp; <h:inputText id="Format" styleClass="input" size="16" value="" /> &nbsp;
+                Location: &nbsp; <h:inputText id="Location" styleClass="input" size="20" value="" /> <br /><br />
+                Date After: &nbsp; <h:inputText id="After" styleClass="input" size="8" value="" /> &nbsp;
+                Before: &nbsp; <h:inputText id="Before" styleClass="input" size="8" value="" /> <br /><br />
 
-                <h:selectOneListbox id="eventdata" value="">
+                <h:selectOneListbox id="eventdata" styleClass="input" value="">
                     <f:selectItem id="info" itemLabel="Info" itemValue="info" />
                     <f:selectItem id="teams" itemLabel="Teams" itemValue="teams" />
                 </h:selectOneListbox>
-                <h:commandButton id="searchEvents" value="Search" action="" />
+                <h:commandButton id="searchEvents" styleClass="button" value="Search" action="" />
             </h:form>
             
             <!-- TODO: Add filters to remove columns from results -->
@@ -63,7 +63,7 @@
         
     </div> <!--end of "page"-->
 
-    <div id="sidebar"> <!--weirdly, css code for footer isn't working even though it's exactly same as sidebar-->
+    <div id="footer" class="footer"> <!--weirdly, css code for footer isn't working even though it's exactly same as sidebar-->
         <ul>
             <li><a href="index.xhtml">Home</a></li>
             <li><a href="trading.xhtml">Trade Offers</a></li>
