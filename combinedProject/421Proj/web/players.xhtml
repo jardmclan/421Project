@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Poke(mon) Bowl Discord DB</title>
+
+        <link rel="stylesheet" type="text/css" href="index.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+<h:body>
+    <div id="mastheadregion"> <div id="masthead"></div></div>
+
+    <div id="page">
+        <div id="sidebar">
+            <ul>
+                <li><a href="index.xhtml">Home</a></li>
+                <li><a href="trading.xhtml">Trade Offers</a></li>
+                <li><a href="breeding.xhtml">Breeding Projects</a></li>
+                <li><a href="players.xhtml">Players</a></li>
+                <li><a href="events.xhtml">Events</a></li>
+                <li><a href="resources.xhtml">Resources</a></li>
+                <li><a href="teams.xhtml">Teams</a></li>
+            </ul>
+        </div> <!--end sidebar-->
+
+        <div id="content">
+            <p>This tool allows you to find information on players in a variety of categories.</p>
+            <p>Type in the player's Discord username, their friend code, or their In-Game-Name (IGN) to search for
+            a particular player.  Then select from the dropdown menu what specific category of information you
+            wish to know about that player.  Categories: General gives information on the player's Discord name
+            and what games they play; Events gives information on their tournament performance; Teams retrieves
+            data on what Pokemon teams they have registered; Breeding generates a list of all the Pokemon
+            they have bred or are breeding, as well as how many of each Pokemon they have.</p>
+            
+            <h:form>
+                Discord u/n: &nbsp; <h:inputText id="discord" size="24" value="" /> &nbsp;
+                Friend Code: &nbsp; <h:inputText id="FC" size="12" value="" /> &nbsp;
+                IGN: &nbsp; <h:inputText id="IGN" size="14" value="" /> &nbsp;
+                Record Type: 
+                <h:selectOneListbox id="records" value="">
+                    <f:selectItem id="general" itemLabel="General" itemValue="general" />
+                    <f:selectItem id="events" itemLabel="Events" itemValue="events" />
+                    <f:selectItem id="teams" itemLabel="Teams" itemValue="teams" />
+                    <f:selectItem id="breeding" itemLabel="Breeding" itemValue="breeding" />
+                </h:selectOneListbox>
+                &nbsp;
+                <h:commandButton id="searchPlayers" value="Search" action="" />
+            </h:form>
+            
+            <!-- TODO: Add filters to remove columns from results -->
+        </div><!--end content-->
+
+        
+    </div> <!--end of "page"-->
+
+    <div id="sidebar"> <!--weirdly, css code for footer isn't working even though it's exactly same as sidebar-->
+        <ul>
+            <li><a href="index.xhtml">Home</a></li>
+            <li><a href="trading.xhtml">Trade Offers</a></li>
+            <li><a href="breeding.xhtml">Breeding Projects</a></li>
+            <li><a href="players.xhtml">Players</a></li>
+            <li><a href="events.xhtml">Events</a></li>
+            <li><a href="resources.xhtml">Resources</a></li>
+            <li><a href="teams.xhtml">Teams</a></li>
+        </ul>
+    </div> <!--end footer-->
+</h:body>
+</html>
