@@ -38,7 +38,7 @@
                 <h:inputSecret id="createPassword" styleClass="input" size="20" maxlength="20" required='true' requiredMessage="Password must not be blank" value="#{CreateAccount.password}" />
                 <h:outputLabel value="Please confirm your password " />
                 <h:inputSecret id="confirmPassword" styleClass="input" size="20" maxlength="20" required='true' requiredMessage="Please confirm your password" value="#{CreateAccount.confirmPass}" />
-                <h:commandButton id="submit" styleClass="button" value="submit" action="response" />
+                <h:commandButton id="submit" styleClass="button" value="submit" action="#{CreateAccount.isValid()}" />
             </h:form>
         </div><!--end content-->        
     </div> <!--end of "page"-->

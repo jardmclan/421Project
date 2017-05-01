@@ -346,8 +346,109 @@ public class Breeding implements Serializable {
         }
 }
     
-    public void addBreeding() {
+    public void addBreeding() throws SQLException {
+        if(CreateConnection.con == null) {
+            CreateConnection.getConnection();
+        }
+        int rand = (int)(Math.random() * Integer.MAX_VALUE);
+        String update1 = "insert into \"Pokemon\" values(?, ?, ?, ?, ?, ?, ?, 386680301688, ?, ?,?,?,?,?,?,?,?,?,?)";
+        String update2 = "insert into \"Breeding\" values(?, 386680301688, 0)";
+        ps = CreateConnection.con.prepareStatement(update1);
         
+        ps.setInt(1, rand);
+        
+        ps.setString(2, name);
+        
+        ps.setString(3, "0");
+        
+        if(gender == 'M' || gender == 'F') {
+            ps.setString(4, Character.toString(gender));
+        }
+        else {
+            ps.setString(4, null);
+        }
+        if(shiny == 'y' || shiny == 'n') {
+            ps.setString(5, Character.toString(shiny));
+        }
+        else {
+            ps.setString(5, "n");
+        }
+        
+
+        ps.setString(6, nature);
+        ps.setString(7, ability);
+        
+        
+        ps.setInt(8, 0);
+        
+        if(isInt(hp)) {
+            ps.setString(9, hp);
+        }
+        else {
+            ps.setString(9, null);
+        }
+        if(isInt(attack)) {
+            ps.setString(10, attack);
+        }
+        else {
+            ps.setString(10, null);
+        }
+        if(isInt(defense)) {
+            ps.setString(11, defense);
+        }
+        else {
+            ps.setString(11, null);
+        }
+        if(isInt(spAttack)) {
+            ps.setString(12, spAttack);
+        }
+        else {
+            ps.setString(12, null);
+        }
+        if(isInt(spDefense)) {
+            ps.setString(13, spDefense);
+        }
+        else {
+            ps.setString(13, null);
+        }
+        if(isInt(speed)) {
+            ps.setString(14, speed);
+        }
+        else {
+            ps.setString(14, null);
+        }
+        
+        
+        if(move1.equals("")) {
+            ps.setString(15, null);
+        }
+        else {
+            ps.setString(15, move1);
+        }
+        if(move2.equals("")) {
+            ps.setString(16, null);
+        }
+        else {
+            ps.setString(16, move2);
+        }
+        if(move3.equals("")) {
+            ps.setString(17, null);
+        }
+        else {
+        ps.setString(17, move3);
+        }
+        if(move4.equals("")) {
+            ps.setString(18, null);
+        }
+        else {
+        ps.setString(18, move4);
+        }
+        
+        ps.executeUpdate();
+        
+        ps = CreateConnection.con.prepareStatement(update2);
+        ps.setInt(1, rand);
+        ps.executeUpdate();
     }
     
     public String getName() {

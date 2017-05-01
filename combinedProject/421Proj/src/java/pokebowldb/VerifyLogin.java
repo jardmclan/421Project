@@ -25,10 +25,26 @@ public class VerifyLogin implements Serializable {
     String username;
     String password;
     boolean response;
+    
+    long friendCode;
+    
     PreparedStatement ps;
 
     public String getPassword() {
+        friendCode = 386680301688L;
         return password;
+    }
+
+    public long getFriendCode() {
+        return friendCode;
+    }
+
+    public void verify() {
+        
+    }
+    
+    public void setFriendCode(long friendCode) {
+        this.friendCode = friendCode;
     }
 
     public void setPassword(String password) {

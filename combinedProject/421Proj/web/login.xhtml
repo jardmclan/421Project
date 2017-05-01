@@ -21,6 +21,7 @@
                 <li><a href="events.xhtml">Events</a></li>
                 <li><a href="resources.xhtml">Resources</a></li>
                 <li><a href="teams.xhtml">Teams</a></li>
+                <!--<li><a href="editprofile.xhtml">Profile</a></li>-->
                 <span id="login" class="login">
                 <li><a href="login.xhtml">Login</a></li>
                 <li><a href="register.xhtml">Register</a></li>
@@ -36,11 +37,11 @@
                 <h:inputText id="username" styleClass="input" size="20" maxlength="20" value="#{VerifyLogin.username}" />
                 <h:outputLabel value="Password " />
                 <h:inputSecret id="password" styleClass="input" size="20" maxlength="20" value="#{VerifyLogin.password}" />
-                <h:commandButton id="Login" styleClass="button" value="Login" action="game" />
+                <h:commandButton id="Login" styleClass="button" value="Login" action="#{VerifyLogin.verify()}" />
             </h:form>
 
             <h5>Don't have an account?</h5>
-            <h:link value='create one here' outcome='createAccount' style='font-size: 13px'/>
+            <h:link value='create one here' outcome='register' style='font-size: 13px'/>
         </div><!--end content-->        
     </div> <!--end of "page"-->
     

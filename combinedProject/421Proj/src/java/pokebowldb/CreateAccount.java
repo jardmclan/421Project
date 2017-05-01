@@ -27,6 +27,8 @@ public class CreateAccount implements Serializable {
     String response;
     PreparedStatement ps;
 
+    
+    
     public String getPassword() {
         return password;
     }
@@ -92,4 +94,7 @@ public class CreateAccount implements Serializable {
         confirmPass = null;
     }
     
+    public void isValid() {
+        
+    }
 }
