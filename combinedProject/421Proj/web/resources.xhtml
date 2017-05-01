@@ -35,7 +35,7 @@
             
             <h:form>
             Pokemon Version: &nbsp; 
-            <h:selectOneListbox id="version" value="">
+            <h:selectOneListbox id="version" value="#{Resources.version}">
                 <f:selectItem id="sunmoon" itemLabel="Sun Moon" itemValue="Sun Moon" />
                 <f:selectItem id="oras" itemLabel="ORAS" itemValue="ORAS" />
                 <f:selectItem id="xy" itemLabel="XY" itemValue="XY" />
@@ -43,16 +43,16 @@
             </h:selectOneListbox> &nbsp;
             
             Category: &nbsp;
-            <h:selectOneListbox id="category" value="">
+            <h:selectOneListbox id="category" value="#{Resources.category}">
                 <f:selectItem id="breeding" itemLabel="Breeding" itemValue="Breeding" />
                 <f:selectItem id="map" itemLabel="Map" itemValue="Map" />
                 <f:selectItem id="misc" itemLabel="Misc Tips" itemValue="Misc Tips" />
                 <f:selectItem id="battle" itemLabel="Battle" itemValue="Battle" />
             </h:selectOneListbox> &nbsp;
             
-            Description Contains: &nbsp; <h:inputText id="description" size="32" value="" /> &nbsp;
+            Description Contains: &nbsp; <h:inputText id="description" size="32" value="#{Resources.descriptionPart}" /> &nbsp;
             
-            <h:commandButton id="searchResources" value="Search" action="" />
+            <h:commandButton id="searchResources" value="Search" action="#{Resources.getResources()}" />
             </h:form>
             
             <!-- TODO: Add filters to remove columns from results -->

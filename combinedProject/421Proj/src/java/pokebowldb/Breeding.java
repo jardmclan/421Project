@@ -328,8 +328,7 @@ public class Breeding implements Serializable {
     }
     
     public List<BreedingProject> getProjects() {
-        List<BreedingProject> temp = projects;
-        return temp;
+        return projects;
         
     }
     

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
     <head>
         <title>Poke(mon) Bowl Discord DB</title>
 
@@ -35,19 +35,23 @@
             they have bred or are breeding, as well as how many of each Pokemon they have.</p>
             
             <h:form>
-                Discord u/n: &nbsp; <h:inputText id="discord" size="24" value="" /> &nbsp;
-                Friend Code: &nbsp; <h:inputText id="FC" size="12" value="" /> &nbsp;
-                IGN: &nbsp; <h:inputText id="IGN" size="14" value="" /> &nbsp;
+                Discord u/n: &nbsp; <h:inputText id="discord" size="24" value="#{Players.discordName}" /> &nbsp;
+                Friend Code: &nbsp; <h:inputText id="FC" size="12" value="#{Players.friendCode}" /> &nbsp;
+                IGN: &nbsp; <h:inputText id="IGN" size="14" value="#{Players.ign}" /> &nbsp;
                 Record Type: 
-                <h:selectOneListbox id="records" value="">
+                <h:selectOneListbox id="records" value="#{Players.recordType}">
                     <f:selectItem id="general" itemLabel="General" itemValue="general" />
                     <f:selectItem id="events" itemLabel="Events" itemValue="events" />
                     <f:selectItem id="teams" itemLabel="Teams" itemValue="teams" />
                     <f:selectItem id="breeding" itemLabel="Breeding" itemValue="breeding" />
                 </h:selectOneListbox>
                 &nbsp;
-                <h:commandButton id="searchPlayers" value="Search" action="" />
+                <h:commandButton id="searchPlayers" value="Search" action="#{Players.getRecords()}" />
             </h:form>
+            
+            <c:choose>
+                <c:when test="true">test</c:when>
+            </c:choose>
             
             <!-- TODO: Add filters to remove columns from results -->
         </div><!--end content-->

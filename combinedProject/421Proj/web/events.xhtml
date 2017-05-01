@@ -40,17 +40,17 @@
             tourney, grouped by placement and player.</p>
             
             <h:form>
-                Event Name: &nbsp; <h:inputText id="EName" size="48" value="" />  &nbsp;
-                Format: &nbsp; <h:inputText id="Format" size="16" value="" /> &nbsp;
-                Location: &nbsp; <h:inputText id="Location" size="20" value="" /> <br /><br />
-                Date After: &nbsp; <h:inputText id="After" size="8" value="" /> &nbsp;
-                Before: &nbsp; <h:inputText id="Before" size="8" value="" /> <br /><br />
+                Event Name: &nbsp; <h:inputText id="EName" size="48" value="#{Events.name}" />  &nbsp;
+                Format: &nbsp; <h:inputText id="Format" size="16" value="#{Events.format}" /> &nbsp;
+                Location: &nbsp; <h:inputText id="Location" size="20" value="#{Events.location}" /> <br /><br />
+                Date After: &nbsp; <h:inputText id="After" size="8" value="#{Events.after}" /> &nbsp;
+                Before: &nbsp; <h:inputText id="Before" size="8" value="#{Events.before}" /> <br /><br />
 
-                <h:selectOneListbox id="eventdata" value="">
+                <h:selectOneListbox id="eventdata" value="#{Events.infoType}">
                     <f:selectItem id="info" itemLabel="Info" itemValue="info" />
                     <f:selectItem id="teams" itemLabel="Teams" itemValue="teams" />
                 </h:selectOneListbox>
-                <h:commandButton id="searchEvents" value="Search" action="" />
+                <h:commandButton id="searchEvents" value="Search" action="#{Events.getInfo()}" />
             </h:form>
             
             <!-- TODO: Add filters to remove columns from results -->
