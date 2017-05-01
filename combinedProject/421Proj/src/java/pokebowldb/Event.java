@@ -22,6 +22,22 @@ public class Event {
     String prize;
     int place;
 
+    public String getPrize() {
+        return prize;
+    }
+
+    public void setPrize(String prize) {
+        this.prize = prize;
+    }
+
+    public int getPlace() {
+        return place;
+    }
+
+    public void setPlace(int place) {
+        this.place = place;
+    }
+
     public String getDescription() {
         return description;
     }

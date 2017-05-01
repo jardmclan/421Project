@@ -54,7 +54,329 @@
             </h:form>
             
             <c:choose>
-                <c:when test="true">test</c:when>
+                <c:when test="#{Players.isGeneral()}">
+                    <h:dataTable value="#{Players.getPlayerDetails()}" var="c"
+                         frame="border"
+                         styleClass="tableheader"
+                         cellspacing="12"
+                         border="5">
+
+                        <h:column>
+                            <f:facet name="header">
+                                Discord Name   
+                            </f:facet>
+                                #{c.discordName}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Friend Code   
+                            </f:facet>
+                            #{c.friendCode}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                IGN   
+                            </f:facet>
+                            #{c.ign}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                BP
+                            </f:facet>
+                            #{c.bp}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Version
+                            </f:facet>
+                            #{c.version}
+                        </h:column>
+                        
+
+                    </h:dataTable>
+                </c:when>
+                <c:when test="#{Players.isEvents()}">
+                    <h:dataTable value="#{Players.getTeams()}" var="c"
+                         frame="border"
+                         styleClass="tableheader"
+                         cellspacing="12"
+                         border="5">
+
+                        <h:column>
+                            <f:facet name="header">
+                                Name
+                            </f:facet>
+                                #{c.eventName}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Friend Code   
+                            </f:facet>
+                            #{c.friendCode}
+                        </h:column>
+                        
+                        <h:column>
+                            <f:facet name="header">
+                                Discord Name   
+                            </f:facet>
+                            #{c.discordName}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Place   
+                            </f:facet>
+                            #{c.place}
+                        </h:column>
+                        
+
+                    </h:dataTable>
+                </c:when>
+                <c:when test="#{Players.isTeams()}">
+                    <h:dataTable value="#{Players.getTeams()}" var="c"
+                         frame="border"
+                         styleClass="tableheader"
+                         cellspacing="12"
+                         border="5">
+
+                        <h:column>
+                            <f:facet name="header">
+                                Team ID   
+                            </f:facet>
+                                #{c.teamID}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Name   
+                            </f:facet>
+                                #{c.name}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Gender   
+                            </f:facet>
+                            #{c.gender}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Shiny   
+                            </f:facet>
+                            #{c.shiny}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Nature
+                            </f:facet>
+                            #{c.nature}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Ability
+                            </f:facet>
+                            #{c.ability}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                HP
+                            </f:facet>
+                            #{c.hp}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Attack
+                            </f:facet>
+                            #{c.attack}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Defense
+                            </f:facet>
+                            #{c.defense}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Special Attack
+                            </f:facet>
+                            #{c.spAttack}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Special Defense
+                            </f:facet>
+                            #{c.spDefense}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Speed
+                            </f:facet>
+                            #{c.speed}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Move 1
+                            </f:facet>
+                            #{c.move1}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Move 2
+                            </f:facet>
+                            #{c.move2}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Move 3
+                            </f:facet>
+                            #{c.move3}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Move 4
+                            </f:facet>
+                            #{c.move4}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Friend Code
+                            </f:facet>
+                            #{c.friendCode}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Discord Name
+                            </f:facet>
+                            #{c.discordName}
+                        </h:column>
+
+                    </h:dataTable>
+                </c:when>
+                <c:when test="#{Players.isBreeding()}">
+                    <h:dataTable value="#{Players.getProjects()}" var="c"
+                         frame="border"
+                         styleClass="tableheader"
+                         cellspacing="12"
+                         border="5">
+
+                        <h:column>
+                            <f:facet name="header">
+                                Name   
+                            </f:facet>
+                                #{c.name}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Gender   
+                            </f:facet>
+                            #{c.gender}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Shiny   
+                            </f:facet>
+                            #{c.shiny}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Nature
+                            </f:facet>
+                            #{c.nature}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Ability
+                            </f:facet>
+                            #{c.ability}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                HP
+                            </f:facet>
+                            #{c.hp}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Attack
+                            </f:facet>
+                            #{c.attack}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Defense
+                            </f:facet>
+                            #{c.defense}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Special Attack
+                            </f:facet>
+                            #{c.spAttack}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Special Defense
+                            </f:facet>
+                            #{c.spDefense}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Speed
+                            </f:facet>
+                            #{c.speed}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Move 1
+                            </f:facet>
+                            #{c.move1}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Move 2
+                            </f:facet>
+                            #{c.move2}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Move 3
+                            </f:facet>
+                            #{c.move3}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Move 4
+                            </f:facet>
+                            #{c.move4}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Friend Code
+                            </f:facet>
+                            #{c.friendCode}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Discord Name
+                            </f:facet>
+                            #{c.discordName}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Number Complete
+                            </f:facet>
+                            #{c.complete}
+                        </h:column>
+
+                    </h:dataTable>
+                </c:when>
             </c:choose>
             
             <!-- TODO: Add filters to remove columns from results -->

@@ -29,6 +29,41 @@ public class Team {
     long friendCode;
     String discordName;
     String eventName;
+    long teamID;
+    int place;
+
+    public int getPlace() {
+        return place;
+    }
+
+    public void setPlace(int place) {
+        this.place = place;
+    }
+    
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    public long getTeamID() {
+        return teamID;
+    }
+
+    public void setTeamID(long teamID) {
+        this.teamID = teamID;
+    }
 
     public long getFriendCode() {
         return friendCode;

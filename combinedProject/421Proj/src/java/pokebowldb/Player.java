@@ -13,9 +13,42 @@ public class Player {
     String discordName;
     long friendCode;
     String ign;
-    String recordType;
     String eventName;
     int place;
+    int bp;
+    String version;
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    public int getPlace() {
+        return place;
+    }
+
+    public void setPlace(int place) {
+        this.place = place;
+    }
+
+    public int getBp() {
+        return bp;
+    }
+
+    public void setBp(int bp) {
+        this.bp = bp;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
     
     
 
@@ -41,14 +74,6 @@ public class Player {
 
     public void setIgn(String ign) {
         this.ign = ign;
-    }
-
-    public String getRecordType() {
-        return recordType;
-    }
-
-    public void setRecordType(String recordType) {
-        this.recordType = recordType;
     }
     
     

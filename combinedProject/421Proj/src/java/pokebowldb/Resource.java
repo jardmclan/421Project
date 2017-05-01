@@ -13,6 +13,15 @@ public class Resource {
     String gen;
     String url;
     String description;
+    String category;
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     public String getGen() {
         return gen;

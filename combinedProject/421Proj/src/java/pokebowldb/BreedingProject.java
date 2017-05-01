@@ -27,6 +27,15 @@ public class BreedingProject {
     String move4;
     long friendCode;
     String discordName;
+    int complete;
+
+    public int getComplete() {
+        return complete;
+    }
+
+    public void setComplete(int complete) {
+        this.complete = complete;
+    }
 
     public long getFriendCode() {
         return friendCode;

@@ -1,7 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <head>
         <title>Poke(mon) Bowl Discord DB</title>
 
@@ -47,8 +48,8 @@
                 Event Name: &nbsp; <h:inputText id="EName" size="48" value="#{Events.name}" />  &nbsp;
                 Format: &nbsp; <h:inputText id="Format" size="16" value="#{Events.format}" /> &nbsp;
                 Location: &nbsp; <h:inputText id="Location" size="20" value="#{Events.location}" /> <br /><br />
-                Date After: &nbsp; <h:inputText id="After" size="8" value="#{Events.after}" /> &nbsp;
-                Before: &nbsp; <h:inputText id="Before" size="8" value="#{Events.before}" /> <br /><br />
+                Date After (YYYY-MM-DD): &nbsp; <h:inputText id="After" size="8" value="#{Events.after}" /> &nbsp;
+                Before (YYYY-MM-DD): &nbsp; <h:inputText id="Before" size="8" value="#{Events.before}" /> <br /><br />
 
                 <h:selectOneListbox id="eventdata" value="#{Events.infoType}">
                     <f:selectItem id="info" itemLabel="Info" itemValue="info" />
@@ -56,7 +57,184 @@
                 </h:selectOneListbox>
                 <h:commandButton id="searchEvents" value="Search" action="#{Events.getInfo()}" />
             </h:form>
-            
+            <c:choose>
+                <c:when test="#{Events.isInfo()}">
+                    <h:dataTable value="#{Events.getEventDetails()}" var="c"
+                         frame="border"
+                         styleClass="tableheader"
+                         cellspacing="12"
+                         border="5">
+
+                        <h:column>
+                            <f:facet name="header">
+                                Name   
+                            </f:facet>
+                                #{c.name}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Location   
+                            </f:facet>
+                            #{c.location}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Format   
+                            </f:facet>
+                            #{c.format}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Rules   
+                            </f:facet>
+                            #{c.rules}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Type   
+                            </f:facet>
+                            #{c.type}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Description   
+                            </f:facet>
+                            #{c.description}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Start Date   
+                            </f:facet>
+                            #{c.startDate}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                End Date   
+                            </f:facet>
+                            #{c.endDate}
+                        </h:column>
+                        
+
+                    </h:dataTable>
+                </c:when>
+                <c:when test="#{Events.isTeams()}">
+                    <h:dataTable value="#{Events.getTeams()}" var="c"
+                         frame="border"
+                         styleClass="tableheader"
+                         cellspacing="12"
+                         border="5">
+
+                        <h:column>
+                            <f:facet name="header">
+                                Name   
+                            </f:facet>
+                                #{c.name}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Gender   
+                            </f:facet>
+                            #{c.gender}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Shiny   
+                            </f:facet>
+                            #{c.shiny}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Nature
+                            </f:facet>
+                            #{c.nature}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Ability
+                            </f:facet>
+                            #{c.ability}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                HP
+                            </f:facet>
+                            #{c.hp}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Attack
+                            </f:facet>
+                            #{c.attack}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Defense
+                            </f:facet>
+                            #{c.defense}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Special Attack
+                            </f:facet>
+                            #{c.spAttack}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Special Defense
+                            </f:facet>
+                            #{c.spDefense}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Speed
+                            </f:facet>
+                            #{c.speed}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Move 1
+                            </f:facet>
+                            #{c.move1}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Move 2
+                            </f:facet>
+                            #{c.move2}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Move 3
+                            </f:facet>
+                            #{c.move3}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Move 4
+                            </f:facet>
+                            #{c.move4}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">
+                                Friend Code
+                            </f:facet>
+                            #{c.friendCode}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                Discord Name
+                            </f:facet>
+                            #{c.discordName}
+                        </h:column>
+
+                    </h:dataTable>
+                </c:when>
+            </c:choose>
             <!-- TODO: Add filters to remove columns from results -->
         </div><!--end content-->
 
